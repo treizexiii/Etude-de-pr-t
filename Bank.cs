@@ -152,21 +152,21 @@ namespace ProjetZeBank
             Console.WriteLine("Points attribués pour la situation familliale : " + pointFamily);
             Console.WriteLine("Points attribués en fonction du nombre d'enfants : " + pointChild);
             Console.WriteLine("Points attribués pour l'anciènneté dans la banque : " + pointSeniority);
-            Console.WriteLine("Points attribués en fonction des avoirs dans la banque : " + pointAsset);
+            Console.WriteLine("Points attribués en fonction des avoirs dans la banque : " + pointAsset+ "\n");
 
             point = pointSex + pointAge + pointFamily + pointSalary + pointAsset + pointJob + pointSeniority + pointBonus;
-            Console.WriteLine("Nombre total de points : " + point);
+            Console.WriteLine("Nombre total de points : " + point + "\n");
             score = (float) (point * 20) / 1030;
             Console.WriteLine("******************************************");
             Console.WriteLine("Score finale : " + score.ToString("0.##") + "/20");
             Console.WriteLine("******************************************");
             if(score >= 10)
             {
-                Console.WriteLine("Votre crédit est accordé.");
+                Console.WriteLine("\nVotre crédit est accordé.");
             }
             else
             {
-                Console.WriteLine("Votre crédit est refusé.");
+                Console.WriteLine("\nVotre crédit est refusé.");
             }
             Console.ReadKey();
         }

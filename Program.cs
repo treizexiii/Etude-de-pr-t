@@ -18,36 +18,44 @@ namespace ProjetZeBank
             string[] jobTable = new string[] { "choisir une catégorie d'activité", "Fonctionnaire", "Salarié(e)", "Libéral", "Artisant", "Chômeur" };
             string[] familyTable = new string[] { "choisir une situation familliale", "Célibataire", "Marié(e)", "Divorcé(e)", "Veuf(ve)" };
 
-            Console.WriteLine("sexe du client :");
+            Console.WriteLine("******************************************");
+            Console.WriteLine("Calculateur de points pour ûn prêt");
+            Console.WriteLine("******************************************");
+            
+            Console.WriteLine("\nBonjour.");
+            Console.WriteLine("Merci de saisir l'ensemble des éléments permettant le calcul de vos points.\n");
+
+            Console.Write("Saiir votre sexe (1- homme ; 2- femme) : ");
             choice = Convert.ToInt32(Console.ReadLine());
             sex = sexTable[choice];
 
-            Console.WriteLine("age :");
+            Console.Write("\nSaisir votre age :");
             age = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("profession (1-5) :");
+            Console.Write("\nSaisir votre profession (1- Fonctionnaire ; 2- Salarié(e) ; 3- Libéral(e) ; 4- Artisant ; 5- Chômeur) : ");
             choice = Convert.ToInt32(Console.ReadLine());
             job = jobTable[choice];
 
-            Console.WriteLine("situation familiale (1-4) :");
+            Console.Write("\nSaisir votre situation familiale (1- Célibatair(e) ; 2- Marié(e) ; 3- Divorcé(e) ; 4- Veuf(ve)) : ");
             choice = Convert.ToInt32(Console.ReadLine());
             familyStituation = familyTable[choice];
 
-            Console.WriteLine("Enfant(s) :");
+            Console.Write("\nSaisir le nombre d'enfant(s) à charge : ");
             child = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("salaire annuel:");
+            Console.Write("\nSaisir votre salaire annuel: ");
             salary = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("avoir :");
+            Console.Write("\nSaisir le montant de vos avoirs déclarés dans la banque : ");
             asset = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Ancienneté :");
+            Console.Write("\nSaisir votre ancienneté : ");
             seniority = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Montant du prêt :");
+            Console.Write("\nSaisir le montant du prêt souhaité : ");
             loan = Convert.ToInt32(Console.ReadLine());
 
+            Console.WriteLine("\n");
             Profil profil = new Profil(sex, job, age, familyStituation, salary, asset, loan, child, seniority);
 
             Bank bank = new Bank(profil);
