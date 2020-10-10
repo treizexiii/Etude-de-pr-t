@@ -10,97 +10,33 @@ namespace ProjetZeBank
     {
         static void Main(string[] args)
         {
-            string sex, job="", familyStituation = "";
-            int age, salary, asset, loan, child;
+            string sex, job, familyStituation;
+            int age, salary, asset, loan, child, choice;
             double seniority;
 
+            string[] sexTable = new string[] { "choisir homme ou femme", "homme", "femme" };
+            string[] jobTable = new string[] { "choisir une catégorie d'activité", "Fonctionnaire", "Salarié(e)", "Libéral", "Artisant", "Chômeur" };
+            string[] familyTable = new string[] { "choisir une situation familliale", "Célibataire", "Marié(e)", "Divorcé(e)", "Veuf(ve)" };
+
             Console.WriteLine("sexe :");
-            int choice = Convert.ToInt32(Console.ReadLine());
-            switch (choice)
-            {
-                case 1:
-                    {
-                        sex = "homme";
-                        break;
-                    }
-                case 2:
-                    {
-                        sex = "femme";
-                        break;
-                    }
-                default:
-                    {
-                        break;
-                    }
-            }
+            choice = Convert.ToInt32(Console.ReadLine());
+            sex = sexTable[choice];
+            Console.WriteLine(sex);
+
 
             Console.WriteLine("age :");
             age = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("profession :");
+            Console.WriteLine("profession (1-5) :");
             choice = Convert.ToInt32(Console.ReadLine());
-            switch (choice)
-            {
-                case 1:
-                    {
-                        job = "Fonctionnaire";
-                        break;
-                    }
-                case 2:
-                    {
-                        job = "Salarié(e)";
-                        break;
-                    }
-                case 3:
-                    {
-                        job = "Libéral";
-                        break;
-                    }
-                case 4:
-                    {
-                        job = "Artisant";
-                        break;
-                    }
-                case 5:
-                    {
-                        job = "Chômeur";
-                        break;
-                    }
-                default:
-                    {
-                        break;
-                    }
-            }   
+            job = jobTable[choice];
+            Console.WriteLine(job);
+  
 
             Console.WriteLine("situation familiale (1-4) :");
             choice = Convert.ToInt32(Console.ReadLine());
-            switch (choice)
-            {
-                case 1:
-                    {
-                        familyStituation = "celibataire";
-                        break;
-                    }
-                case 2:
-                    {
-                        familyStituation = "Marié(e)";
-                        break;
-                    }
-                case 3:
-                    {
-                        familyStituation = "Divorcé(e)";
-                        break;
-                    }
-                case 4:
-                    {
-                        familyStituation = "Veuf(ve)";
-                        break;
-                    }
-                default:
-                    {
-                        break;
-                    }
-            }
+            familyStituation = familyTable[choice];
+
 
             Console.WriteLine("Enfant(s) :");
             child = Convert.ToInt32(Console.ReadLine());
@@ -121,7 +57,6 @@ namespace ProjetZeBank
 
             Bank bank = new Bank(profil);
             bank.AttributionPret();
-            //bank.Present();
         }
 
     }

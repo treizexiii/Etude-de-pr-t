@@ -127,6 +127,10 @@ namespace ProjetZeBank
             {
                 point += profilBank.Child() * 10;
             }
+            else
+            {
+                point += 30;
+            }
 
             Console.WriteLine(point);
             Console.ReadKey();
