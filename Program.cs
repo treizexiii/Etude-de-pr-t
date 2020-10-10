@@ -23,7 +23,6 @@ namespace ProjetZeBank
             sex = sexTable[choice];
             Console.WriteLine(sex);
 
-
             Console.WriteLine("age :");
             age = Convert.ToInt32(Console.ReadLine());
 
@@ -31,12 +30,10 @@ namespace ProjetZeBank
             choice = Convert.ToInt32(Console.ReadLine());
             job = jobTable[choice];
             Console.WriteLine(job);
-  
 
             Console.WriteLine("situation familiale (1-4) :");
             choice = Convert.ToInt32(Console.ReadLine());
             familyStituation = familyTable[choice];
-
 
             Console.WriteLine("Enfant(s) :");
             child = Convert.ToInt32(Console.ReadLine());
