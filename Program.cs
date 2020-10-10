@@ -18,10 +18,9 @@ namespace ProjetZeBank
             string[] jobTable = new string[] { "choisir une catégorie d'activité", "Fonctionnaire", "Salarié(e)", "Libéral", "Artisant", "Chômeur" };
             string[] familyTable = new string[] { "choisir une situation familliale", "Célibataire", "Marié(e)", "Divorcé(e)", "Veuf(ve)" };
 
-            Console.WriteLine("sexe :");
+            Console.WriteLine("sexe du client :");
             choice = Convert.ToInt32(Console.ReadLine());
             sex = sexTable[choice];
-            Console.WriteLine(sex);
 
             Console.WriteLine("age :");
             age = Convert.ToInt32(Console.ReadLine());
@@ -29,7 +28,6 @@ namespace ProjetZeBank
             Console.WriteLine("profession (1-5) :");
             choice = Convert.ToInt32(Console.ReadLine());
             job = jobTable[choice];
-            Console.WriteLine(job);
 
             Console.WriteLine("situation familiale (1-4) :");
             choice = Convert.ToInt32(Console.ReadLine());

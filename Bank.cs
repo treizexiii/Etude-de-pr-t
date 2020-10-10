@@ -15,158 +15,160 @@ namespace ProjetZeBank
             profilBank = profil;
         }
 
-        int point = 0;
+        int point = 0, pointSex, pointAge, pointJob, pointSalary, pointFamily, pointChild, pointAsset, pointBonus, pointSeniority;
         float score;
 
         public void AttributionPret()
         {
             if (profilBank.Sex() == "homme")
             {
-                point += 0;
+                pointSex += 0;
             }
             else
             {
-                point += 50;
+                pointSex += 50;
             }
-
-            Console.WriteLine(point);
-            Console.ReadKey();
 
             if (profilBank.Age() > 19)
             {
                 if (profilBank.Age() > 80)
                 {
-                    point += 0;
+                    pointAge += 0;
                 }
                 else if (profilBank.Age() > 64 && profilBank.Age() <= 80)
                 {
-                    point += 150;
+                    pointAge += 150;
                 }
                 else if (profilBank.Age() > 44 && profilBank.Age() <= 64)
                 {
-                    point += 100;
+                    pointAge += 100;
                 }
                 else if (profilBank.Age() > 20 && profilBank.Age() <= 44)
                 {
-                    point += 50;
+                    pointAge += 50;
                 }
-                Console.WriteLine(point);
-                Console.ReadKey();
             }
-
 
             if(profilBank.Job() != "Chômeur")
             {
                 if (profilBank.Job() == "Fonctionnaire")
                 {
-                    point += 100;
+                    pointJob += 100;
                 }
                 else if (profilBank.Job() == "Salarié(e)")
                 {
-                    point += 70;
+                    pointJob += 70;
                 }
                 else if (profilBank.Job() == "Libéral")
                 {
-                    point += 50;
+                    pointJob += 50;
                 }
                 else if (profilBank.Job() == "Artisant")
                 {
-                    point += 40;
+                    pointJob += 40;
                 }
-                Console.WriteLine(point);
-                Console.ReadKey();
             }
-
-
 
             if (profilBank.Loan() < profilBank.Salary() * 2)
             {
                 if (profilBank.Loan() <= profilBank.Salary() / 2)
                 {
-                    point += 150;
-                    if (profilBank.Salary() >= 120000)
-                    {
-                        point += 150;
-                    }
-                    Console.WriteLine(point);
-                    Console.ReadKey();
+                    pointSalary += 150;
                 }
                 else if (profilBank.Loan() <= profilBank.Salary())
                 {
-                    point += 100;
+                    pointSalary += 100;
                 }
                 else if (profilBank.Loan() <= profilBank.Salary() * 2)
                 {
-                    point += 50;
+                    pointSalary += 50;
                 }
-                Console.WriteLine(point);
-                Console.ReadKey();
+            }
+
+            if (profilBank.Salary() >= 120000)
+            {
+                pointBonus += 150;
             }
 
             if (profilBank.FamilySituation() == "Célibataire" || profilBank.FamilySituation() == "Veuf(ve)")
             {
-                point += 100;
+                pointFamily += 100;
             }
             else if (profilBank.FamilySituation() == "Marié(e)")
             {
-                point += 200;
+                pointFamily += 200;
             }
             else if (profilBank.FamilySituation() == "Divorcé(e)")
             {
-                point += 50;
+                pointFamily += 50;
             }
-
-            Console.WriteLine(point);
-            Console.ReadKey();
 
             if (profilBank.Child() >= 1)
             {
                 if (profilBank.Child() > 0 && profilBank.Child() <= 3)
                 {
-                    point += profilBank.Child() * 10;
+                    pointChild += profilBank.Child() * 10;
                 }
                 else
                 {
-                    point += 30;
+                    pointChild += 30;
                 }
-                Console.WriteLine(point);
-                Console.ReadKey();
             }
-
 
             if (profilBank.Seniority() >= 1)
             {
                 if (profilBank.Seniority() > 5)
                 {
-                    point += 100;
+                    pointSeniority += 100;
                 }
                 else
                 {
-                    point += (int)profilBank.Seniority() * 10;
+                    pointSeniority += Convert.ToInt32(profilBank.Seniority() * 10);
                 }
-                Console.WriteLine(point);
-                Console.ReadKey();
             }
 
             if (profilBank.Asset() != 0)
             {
                 if (profilBank.Asset() > profilBank.Loan())
                 {
-                    point += 100;
+                    pointAsset += 100;
                 }
                 else if (profilBank.Asset() > profilBank.Loan() / 2)
                 {
-                    point += 50;
+                    pointAsset += 50;
                 }
                 else if (profilBank.Asset() > profilBank.Loan() / 4)
                 {
-                    point += 25;
+                    pointAsset += 25;
                 }
+
             }
+            
+            Console.WriteLine("Points attribués pour le sexe : " + pointSex);
+            Console.WriteLine("Points attribués pour l'age : " + pointAge);
+            Console.WriteLine("Points attribués en fonction de la catégorie d'emploi : " + pointJob);
+            Console.WriteLine("Points attribués pour le salaire : " + pointSalary);
+            Console.WriteLine("Points attribués pour un salaire suppérieure à 120000€ : " + pointBonus);
+            Console.WriteLine("Points attribués pour la situation familliale : " + pointFamily);
+            Console.WriteLine("Points attribués en fonction du nombre d'enfants : " + pointChild);
+            Console.WriteLine("Points attribués pour l'anciènneté dans la banque : " + pointSeniority);
+            Console.WriteLine("Points attribués en fonction des avoirs dans la banque : " + pointAsset);
 
+            point = pointSex + pointAge + pointFamily + pointSalary + pointAsset + pointJob + pointSeniority + pointBonus;
+            Console.WriteLine("Nombre total de points : " + point);
             score = (float) (point * 20) / 1030;
-            Console.WriteLine(score);
-
+            Console.WriteLine("******************************************");
+            Console.WriteLine("Score finale : " + score.ToString("0.##") + "/20");
+            Console.WriteLine("******************************************");
+            if(score >= 10)
+            {
+                Console.WriteLine("Votre crédit est accordé.");
+            }
+            else
+            {
+                Console.WriteLine("Votre crédit est refusé.");
+            }
+            Console.ReadKey();
         }
     }
 }
