@@ -144,18 +144,18 @@ namespace ProjetZeBank
 
             }
             
-            Console.WriteLine("Points attribués pour le sexe : " + pointSex);
-            Console.WriteLine("Points attribués pour l'age : " + pointAge);
-            Console.WriteLine("Points attribués en fonction de la catégorie d'emploi : " + pointJob);
-            Console.WriteLine("Points attribués pour le salaire : " + pointSalary);
-            Console.WriteLine("Points attribués pour un salaire suppérieure à 120000€ : " + pointBonus);
-            Console.WriteLine("Points attribués pour la situation familliale : " + pointFamily);
-            Console.WriteLine("Points attribués en fonction du nombre d'enfants : " + pointChild);
-            Console.WriteLine("Points attribués pour l'anciènneté dans la banque : " + pointSeniority);
-            Console.WriteLine("Points attribués en fonction des avoirs dans la banque : " + pointAsset+ "\n");
+            Console.WriteLine("Points attribués pour le sexe : " + pointSex + "/50");
+            Console.WriteLine("Points attribués pour l'age : " + pointAge + "/150");
+            Console.WriteLine("Points attribués en fonction de la catégorie d'emploi : " + pointJob + "/100");
+            Console.WriteLine("Points attribués pour le salaire : " + pointSalary + "/150");
+            Console.WriteLine("Points attribués pour un salaire suppérieure à 120000€ : " + pointBonus + "/150");
+            Console.WriteLine("Points attribués pour la situation familliale : " + pointFamily + "/200");
+            Console.WriteLine("Points attribués en fonction du nombre d'enfants : " + pointChild + "/30");
+            Console.WriteLine("Points attribués pour l'anciènneté dans la banque : " + pointSeniority + "/100");
+            Console.WriteLine("Points attribués en fonction des avoirs dans la banque : " + pointAsset + "/100" + "\n");
 
             point = pointSex + pointAge + pointFamily + pointSalary + pointAsset + pointJob + pointSeniority + pointBonus;
-            Console.WriteLine("Nombre total de points : " + point + "\n");
+            Console.WriteLine("Nombre total de points : " + point + "/1030" + "\n");
             score = (float) (point * 20) / 1030;
             Console.WriteLine("******************************************");
             Console.WriteLine("Score finale : " + score.ToString("0.##") + "/20");
