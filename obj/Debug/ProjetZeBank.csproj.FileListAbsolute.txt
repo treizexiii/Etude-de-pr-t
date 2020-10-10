@@ -1,0 +1,7 @@
+C:\Users\darkt\OneDrive\Cours developpement\Projet\ProjetZeBank\bin\Debug\ProjetZeBank.exe.config
+C:\Users\darkt\OneDrive\Cours developpement\Projet\ProjetZeBank\bin\Debug\ProjetZeBank.exe
+C:\Users\darkt\OneDrive\Cours developpement\Projet\ProjetZeBank\bin\Debug\ProjetZeBank.pdb
+C:\Users\darkt\OneDrive\Cours developpement\Projet\ProjetZeBank\obj\Debug\ProjetZeBank.csprojAssemblyReference.cache
+C:\Users\darkt\OneDrive\Cours developpement\Projet\ProjetZeBank\obj\Debug\ProjetZeBank.csproj.CoreCompileInputs.cache
+C:\Users\darkt\OneDrive\Cours developpement\Projet\ProjetZeBank\obj\Debug\ProjetZeBank.exe
+C:\Users\darkt\OneDrive\Cours developpement\Projet\ProjetZeBank\obj\Debug\ProjetZeBank.pdb
